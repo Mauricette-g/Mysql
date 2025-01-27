@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 27 jan. 2025 à 09:13
+-- Généré le : lun. 27 jan. 2025 à 09:55
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -57,9 +57,9 @@ CREATE TABLE `boisson` (
 --
 
 INSERT INTO `boisson` (`id_boisson`, `nom_boisson`, `id_marque`) VALUES
-(1, 'Coca Cola', 1),
-(2, 'Vin rouge', 2),
-(3, 'Jus Bissap', 3);
+(1, 'Coca-cola', 1),
+(2, 'Pepsi', 2),
+(3, 'Eau de source', 3);
 
 -- --------------------------------------------------------
 
@@ -110,7 +110,7 @@ CREATE TABLE `focacia` (
 --
 
 INSERT INTO `focacia` (`id_focacia`, `nom_focacia`, `prix_focacia`) VALUES
-(1, 'Focacia sarda', 5);
+(1, 'Raclaccia', 8.9);
 
 -- --------------------------------------------------------
 
@@ -128,9 +128,13 @@ CREATE TABLE `ingredient` (
 --
 
 INSERT INTO `ingredient` (`id_ingredient`, `nom_ingredient`) VALUES
-(1, 'Oignon'),
-(2, 'Farine'),
-(3, 'Levure');
+(1, 'Base tomate'),
+(2, 'raclette'),
+(3, 'cresson'),
+(4, 'ail'),
+(5, 'champignon'),
+(6, 'parmesan'),
+(7, 'poivre');
 
 -- --------------------------------------------------------
 
@@ -150,7 +154,11 @@ CREATE TABLE `ingredient_focacia` (
 INSERT INTO `ingredient_focacia` (`id_focacia`, `id_ingredient`) VALUES
 (1, 1),
 (1, 2),
-(1, 3);
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7);
 
 -- --------------------------------------------------------
 
@@ -168,9 +176,9 @@ CREATE TABLE `marque` (
 --
 
 INSERT INTO `marque` (`id_marque`, `nom_marque`) VALUES
-(1, 'Coca'),
-(2, 'Le Baron'),
-(3, 'Naturel');
+(1, 'Coca-cola'),
+(2, 'Pepsico'),
+(3, 'Cristalline');
 
 -- --------------------------------------------------------
 
@@ -354,7 +362,7 @@ ALTER TABLE `focacia`
 -- AUTO_INCREMENT pour la table `ingredient`
 --
 ALTER TABLE `ingredient`
-  MODIFY `id_ingredient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_ingredient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `marque`
