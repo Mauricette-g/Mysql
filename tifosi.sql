@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 27 jan. 2025 à 09:55
+-- Généré le : mar. 28 jan. 2025 à 15:18
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -33,13 +33,6 @@ CREATE TABLE `achete` (
   `jour` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `achete`
---
-
-INSERT INTO `achete` (`id_client`, `id_focacia`, `jour`) VALUES
-(1, 1, '2025-01-01');
-
 -- --------------------------------------------------------
 
 --
@@ -51,15 +44,6 @@ CREATE TABLE `boisson` (
   `nom_boisson` varchar(45) NOT NULL,
   `id_marque` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `boisson`
---
-
-INSERT INTO `boisson` (`id_boisson`, `nom_boisson`, `id_marque`) VALUES
-(1, 'Coca-cola', 1),
-(2, 'Pepsi', 2),
-(3, 'Eau de source', 3);
 
 -- --------------------------------------------------------
 
@@ -73,13 +57,6 @@ CREATE TABLE `client` (
   `age` int(11) DEFAULT NULL,
   `cp_client` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `client`
---
-
-INSERT INTO `client` (`id_client`, `nom_client`, `age`, `cp_client`) VALUES
-(1, 'Client1', 33, 10);
 
 -- --------------------------------------------------------
 
@@ -105,13 +82,6 @@ CREATE TABLE `focacia` (
   `prix_focacia` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `focacia`
---
-
-INSERT INTO `focacia` (`id_focacia`, `nom_focacia`, `prix_focacia`) VALUES
-(1, 'Raclaccia', 8.9);
-
 -- --------------------------------------------------------
 
 --
@@ -122,19 +92,6 @@ CREATE TABLE `ingredient` (
   `id_ingredient` int(11) NOT NULL,
   `nom_ingredient` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `ingredient`
---
-
-INSERT INTO `ingredient` (`id_ingredient`, `nom_ingredient`) VALUES
-(1, 'Base tomate'),
-(2, 'raclette'),
-(3, 'cresson'),
-(4, 'ail'),
-(5, 'champignon'),
-(6, 'parmesan'),
-(7, 'poivre');
 
 -- --------------------------------------------------------
 
@@ -147,19 +104,6 @@ CREATE TABLE `ingredient_focacia` (
   `id_ingredient` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `ingredient_focacia`
---
-
-INSERT INTO `ingredient_focacia` (`id_focacia`, `id_ingredient`) VALUES
-(1, 1),
-(1, 2),
-(1, 3),
-(1, 4),
-(1, 5),
-(1, 6),
-(1, 7);
-
 -- --------------------------------------------------------
 
 --
@@ -170,15 +114,6 @@ CREATE TABLE `marque` (
   `id_marque` int(11) NOT NULL,
   `nom_marque` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `marque`
---
-
-INSERT INTO `marque` (`id_marque`, `nom_marque`) VALUES
-(1, 'Coca-cola'),
-(2, 'Pepsico'),
-(3, 'Cristalline');
 
 -- --------------------------------------------------------
 
@@ -192,13 +127,6 @@ CREATE TABLE `menu` (
   `prix_menu` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `menu`
---
-
-INSERT INTO `menu` (`id_menu`, `nom_menu`, `prix_menu`) VALUES
-(1, 'Menu 1', 500);
-
 -- --------------------------------------------------------
 
 --
@@ -209,13 +137,6 @@ CREATE TABLE `menu_boisson` (
   `id_menu` int(11) NOT NULL,
   `id_boisson` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `menu_boisson`
---
-
-INSERT INTO `menu_boisson` (`id_menu`, `id_boisson`) VALUES
-(1, 1);
 
 -- --------------------------------------------------------
 
@@ -228,13 +149,6 @@ CREATE TABLE `menu_focacia` (
   `id_focacia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `menu_focacia`
---
-
-INSERT INTO `menu_focacia` (`id_menu`, `id_focacia`) VALUES
-(1, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -246,13 +160,6 @@ CREATE TABLE `paye` (
   `id_menu` int(11) NOT NULL,
   `jour` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `paye`
---
-
-INSERT INTO `paye` (`id_client`, `id_menu`, `jour`) VALUES
-(1, 1, '2025-01-01');
 
 --
 -- Index pour les tables déchargées
@@ -362,7 +269,7 @@ ALTER TABLE `focacia`
 -- AUTO_INCREMENT pour la table `ingredient`
 --
 ALTER TABLE `ingredient`
-  MODIFY `id_ingredient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_ingredient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `marque`
